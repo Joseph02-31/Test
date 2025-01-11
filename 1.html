@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Protected Link</title>
+    <link rel="icon" href="C:\Users\Lenovo\OneDrive\Desktop\1.jpg" type="image/x-icon">
+    <style>
+        body {
+            font-family: "TeX Gyre Chorus", cursive;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background: url('file:///C:/Users/Lenovo/Documents/OLD/ALL/New%20folder/1.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: rgb(3, 3, 3);
+        }
+        .container {
+            text-align: center;
+            background: rgba(0, 0, 0, 0.2);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+        h2 {
+            font-size: 40px;
+            margin-bottom: 30px;
+        }
+        p {
+            font-size: 30px; /* Adjust the size as needed */
+        }
+        .container p {
+         font-size: 50px; /* Adjust the size as needed */
+        }
+
+        input {
+            width: 80%;
+            padding: 10px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+        input:focus {
+            border: 2px solid #4caf50;
+            outline: none;
+        }
+        button {
+            background: #232823;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+        button:hover {
+            background: #45a049;
+        }
+        .footer {
+            margin-top: 20px;
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.8);
+        }
+        .show-password-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 10px;
+        }
+        .show-password {
+            font-size: 14px;
+            color: #fff;
+            cursor: pointer;
+            text-decoration: underline;
+            transition: color 0.3s ease;
+        }
+        .show-password:hover {
+            color: #4caf50;
+        }
+    </style>
+    <script>
+        function checkPassword() {
+            const password = document.getElementById('password').value;
+            if (password === 'Youssef') { // Replace 'Youssef' with the actual password
+                window.location.href = 'https://www.google.com/search?q=weather'; // Replace with your desired link
+            } else {
+                alert('Incorrect password. Please try again.');
+            }
+        }
+
+        // Function to toggle password visibility
+        function togglePassword() {
+            const passwordField = document.getElementById('password');
+            const toggleIcon = document.getElementById('toggle-icon');
+            if (passwordField.type === "password") {
+                passwordField.type = "text";
+                toggleIcon.innerText = "Hide Password";
+            } else {
+                passwordField.type = "password";
+                toggleIcon.innerText = "Show Password";
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h2> Secure Access</h2>
+        <p>Please enter the password to access the link.</p>
+        <input type="password" id="password" placeholder="Enter your password">
+        <br>
+        <div class="show-password-container">
+            <span class="show-password" onclick="togglePassword()">Show Password</span>
+        </div>
+        <br>
+        <button onclick="checkPassword()">Submit</button>
+        <div class="footer">
+            © 2025 Joseph | All Rights Reserved
+        </div>
+    </div>
+</body>
+</html>
